@@ -22,7 +22,7 @@
 
 
 
-<section id="about" >
+<section id="about" class="section">
   <h2 align="center">Welcome</h2>
   <blockquote>
   <p >I'm Elvis, a passionate software engineer and technology enthusiast with a focus on creating innovative solutions. With a strong foundation in computer science and a natural curiosity, I thrive on tackling complex problems and transforming ideas into reality.</p>
@@ -40,7 +40,7 @@
 </section>
 
 
-  <section id="education">
+  <section id="education" class="section">
   <h2 align="center">Education</h2>
     <h3>Master of Science in Technology Commercialization</h3> University of Texas - Austin,TX
     <h3>Bachelor of Science in Mathematics</h3> <p> University of Houston - Houston,TX </p>
@@ -54,7 +54,7 @@
   </div>
 </section>
 
-<section id="experience">
+<section id="experience" class="section">
   <blockquote>
   <h2 align="center">Experience</h2>
 
@@ -106,7 +106,7 @@
 </section>
 
 
-<section id="skills">
+<section id="skills" class="section">
   <blockquote>
   <h2 align="center">Skills</h2>
   <div class="skills-grid">
@@ -212,7 +212,7 @@
 
 
 
-<section id="projects">
+<section id="projects" class="section">
   <blockquote  >
   <h2 align="center">Projects</h2>
 
@@ -266,7 +266,31 @@
   </div>
 </blockquote>
 </section>
+<script>
+    // Place your JavaScript code here
+    window.addEventListener('DOMContentLoaded', function() {
+      var sections = document.querySelectorAll('.section');
 
+      var options = {
+        rootMargin: '0px',
+        threshold: 0.5 // Adjust the threshold as needed
+      };
+
+      var animateSection = function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      var observer = new IntersectionObserver(animateSection, options);
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+    });
+  </script>
 
 
 

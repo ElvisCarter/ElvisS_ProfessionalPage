@@ -177,3 +177,69 @@ footer p {
   background-color: #f0f0f0;
   border-radius: 4px;
 }
+
+
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.zoom-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rotate-in {
+  opacity: 1;
+  transform: rotate(0);
+}
+/* Define the animation keyframes for each section */
+@keyframes section-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to each section */
+#about {
+  animation: section-fade-in 1s ease-in-out;
+}
+
+#education {
+  animation: section-fade-in 1s ease-in-out;
+}
+#experience {
+  animation: section-fade-in 1s ease-in-out;
+}
+
+#skills {
+  animation: section-fade-in 1s ease-in-out;
+}
+
+#projects {
+  animation: section-fade-in 1s ease-in-out;
+}
+
+#contact {
+  animation: section-fade-in 1s ease-in-out;
+}
