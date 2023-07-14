@@ -214,8 +214,15 @@
 
 <section id="projects" class="section">
   <blockquote  >
-  <h2 align="center">Projects</h2>
 
+ <!-- Projects section content -->
+  <div class="fireworks-container">
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <div class="firework"></div>
+    <h2 align="center">Projects</h2>
+    <!-- Add more firework elements as needed -->
+  </div>
   <div class="project">
     <h3 align="center">Intelligent Application Monitoring System</h3>
     <p>
@@ -251,7 +258,7 @@
     </p>
   </div>
 
-  <div class="project">
+  <div class="project" >
     <h3 align="center">Documentation and Collaboration using Jira</h3>
     <p>
       Led documentation efforts and collaboration using Jira for an Agile software development project. Created and maintained technical documentation, user manuals, and release notes. Utilized Jira for issue tracking, project management, and Agile workflow management. Facilitated communication and coordination among team members, ensuring efficient development processes and timely delivery of project milestones.
@@ -290,6 +297,27 @@
         observer.observe(section);
       });
     });
+
+
+window.addEventListener('DOMContentLoaded', function() {
+  var projectsSection = document.getElementById('projects');
+  var fireworksContainer = projectsSection.querySelector('.fireworks-container');
+
+  function createFireworks() {
+    for (var i = 0; i < 5; i++) { // Adjust the number of fireworks as desired
+      var firework = document.createElement('div');
+      firework.classList.add('firework');
+      firework.style.left = Math.random() * 90 + 'vw'; // Adjust the range of left position as desired
+      firework.style.animationDelay = Math.random() + 's'; // Adjust the animation delay as desired
+      firework.innerHTML = '<span class="spark"></span>'; // Add a spark element to the firework
+      fireworksContainer.appendChild(firework);
+    }
+  }
+
+  createFireworks();
+});
+
+
   </script>
 
 
